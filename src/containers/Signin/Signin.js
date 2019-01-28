@@ -65,13 +65,12 @@ class Signin extends Component {
         const signinPayload = {
             ...this.state
         };
-        console.log(this.state);
-
         axios.post('http://localhost:8080/api/auth/signin', signinPayload)
             .then((response) => {
                 this.setState({
                     submitted: true
-                })
+                });
+                localStorage.setItem('accessToken', response.accessToken);
             })
             .catch((error) => {
                 this.setState({
@@ -88,6 +87,10 @@ class Signin extends Component {
 
         this.setState({ open: false });
     };
+
+    componentDidMount = () => {
+        this.props.onSignin();
+    }
 
     render() {
         const { classes } = this.props;

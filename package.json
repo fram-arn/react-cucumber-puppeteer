@@ -6,6 +6,7 @@
     "@material-ui/core": "^3.9.0",
     "@material-ui/icons": "^3.0.2",
     "axios": "^0.18.0",
+    "cosmiconfig": "^5.0.7",
     "express": "^4.16.4",
     "http-shutdown": "^1.2.0",
     "react": "^16.7.0",
@@ -31,6 +32,11 @@
   ],
   "devDependencies": {
     "cucumber": "^5.1.0",
+    "cypress": "^3.1.4",
+    "cypress-cucumber-preprocessor": "^1.9.1",
     "puppeteer": "^1.11.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
   }
 }
